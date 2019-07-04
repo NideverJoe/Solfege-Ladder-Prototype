@@ -2,6 +2,8 @@ html {
   font-size: 10px;
   background: seagreen;
   background: url(images/512x512bb.jpg) bottom center;
+  touch-action: manipulation;
+
 }
 
 body,html {
