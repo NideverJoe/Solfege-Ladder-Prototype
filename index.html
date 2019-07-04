@@ -78,6 +78,12 @@
 
       });
 
+      $(".dolow").on("tap", function () {
+        dolowaudio.play();
+        dolowaudio.currentTime = 0;
+
+      });
+
       var reaudio = document.createElement("audio");
       reaudio.setAttribute("src", "sounds/voice_2.mp3");
 
@@ -85,8 +91,11 @@
         event.stopPropagation(); event.preventDefault();
         reaudio.play();
         reaudio.currentTime = 0;
+      });
 
-
+      $(".re").on("tap", function () {
+        reaudio.play();
+        reaudio.currentTime = 0;
       });
 
       var miaudio = document.createElement("audio");
@@ -96,17 +105,24 @@
         event.stopPropagation(); event.preventDefault();
         miaudio.play();
         miaudio.currentTime = 0;
-
+      });
+      
+      $(".mi").on("tap", function () {
+        miaudio.play();
+        miaudio.currentTime = 0;
       });
 
       var faaudio = document.createElement("audio");
       faaudio.setAttribute("src", "sounds/voice_4.mp3");
 
       $(".fa").on("click", function () {
-        event.stopPropagation(); event.preventDefault();
         faaudio.play();
         faaudio.currentTime = 0;
+      });
 
+      $(".fa").on("tap", function () {
+        faaudio.play();
+        faaudio.currentTime = 0;
       });
 
       var solaudio = document.createElement("audio");
@@ -116,7 +132,11 @@
         event.stopPropagation(); event.preventDefault();
         solaudio.play();
         solaudio.currentTime = 0;
+      });
 
+      $(".sol").on("tap", function () {
+        solaudio.play();
+        solaudio.currentTime = 0;
       });
 
       var laaudio = document.createElement("audio");
@@ -126,7 +146,11 @@
         event.stopPropagation(); event.preventDefault();
         laaudio.play();
         laaudio.currentTime = 0;
+      });
 
+      $(".la").on("tap", function () {
+        laaudio.play();
+        laaudio.currentTime = 0;
       });
 
       var tiaudio = document.createElement("audio");
@@ -136,8 +160,11 @@
         event.stopPropagation(); event.preventDefault();
         tiaudio.play();
         tiaudio.currentTime = 0;
+      });
 
-
+      $(".ti").on("tap", function () {
+        tiaudio.play();
+        tiaudio.currentTime = 0;
       });
 
       var dohighaudio = document.createElement("audio");
@@ -147,7 +174,11 @@
         event.stopPropagation(); event.preventDefault();
         dohighaudio.play();
         dohighaudio.currentTime = 0;
+      });
 
+      $(".dohigh").on("tap", function () {
+        dohighaudio.play();
+        dohighaudio.currentTime = 0;
       });
     })
 
