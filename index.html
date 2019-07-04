@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Solfege Ladder</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+
+  <div class="keys">
+    <div data-key="56" class="key dohigh">
+      <img class="solfege" src="images/do.png" alt="">
+      <kbd>8</kbd>
+      <span class="sound">do'</span>
+    </div>
+    <div data-key="55" class="key ti">
+      <img class="solfege" src="images/ti.png" alt="">
+      <kbd>7</kbd>
+      <span class="sound">ti</span>
+    </div>
+    <div data-key="54" class="key la">
+      <img class="solfege" src="images/la.png" alt="">
+      <kbd>6</kbd>
+      <span class="sound">la</span>
+    </div>
+    <div data-key="53" class="key sol">
+      <img class="solfege" src="images/sol.png" alt="">
+      <kbd>5</kbd>
+      <span class="sound">sol</span>
+    </div>
+    <div data-key="52" class="key fa">
+      <img class="solfege" src="images/fa.png" alt="">
+      <kbd>4</kbd>
+      <span class="sound">fa</span>
+    </div>
+    <div data-key="51" class="key mi">
+      <img class="solfege" src="images/mi.png" alt="">
+      <kbd>3</kbd>
+      <span class="sound">mi</span>
+    </div>
+    <div data-key="50" class="key re">
+      <img class="solfege" src="images/re.png" alt="">
+      <kbd>2</kbd>
+      <span class="sound">re</span>
+    </div>
+    <div data-key="49" class="key dolow">
+      <img class="solfege" src="images/do.png" alt="">
+      <kbd>1</kbd>
+      <span class="sound">do</span>
+    </div>
+  </div>
+
+  <audio data-key="49" src="sounds/voice_1.mp3"></audio>
+  <audio data-key="50" src="sounds/voice_2.mp3"></audio>
+  <audio data-key="51" src="sounds/voice_3.mp3"></audio>
+  <audio data-key="52" src="sounds/voice_4.mp3"></audio>
+  <audio data-key="53" src="sounds/voice_5.mp3"></audio>
+  <audio data-key="54" src="sounds/voice_6.mp3"></audio>
+  <audio data-key="55" src="sounds/voice_7.mp3"></audio>
+  <audio data-key="56" src="sounds/voice_8.mp3"></audio>
+
+  <script>
+    $(document).ready(function () {
+
+      var dolowaudio = document.createElement("audio");
+      dolowaudio.setAttribute("src", "sounds/voice_1.mp3");
+
+      $(".dolow").on("click", function () {
+        dolowaudio.play();
+        dolowaudio.currentTime = 0;
+
+      });
+
+      var reaudio = document.createElement("audio");
+      reaudio.setAttribute("src", "sounds/voice_2.mp3");
+
+      $(".re").on("click", function () {
+        reaudio.play();
+        reaudio.currentTime = 0;
+
+
+      });
+
+      var miaudio = document.createElement("audio");
+      miaudio.setAttribute("src", "sounds/voice_3.mp3");
+
+      $(".mi").on("click", function () {
+        miaudio.play();
+        miaudio.currentTime = 0;
+
+      });
+
+      var faaudio = document.createElement("audio");
+      faaudio.setAttribute("src", "sounds/voice_4.mp3");
+
+      $(".fa").on("click", function () {
+        faaudio.play();
+        faaudio.currentTime = 0;
+
+      });
+
+      var solaudio = document.createElement("audio");
+      solaudio.setAttribute("src", "sounds/voice_5.mp3");
+
+      $(".sol").on("click", function () {
+        solaudio.play();
+        solaudio.currentTime = 0;
+
+      });
+
+      var laaudio = document.createElement("audio");
+      laaudio.setAttribute("src", "sounds/voice_6.mp3");
+
+      $(".la").on("click", function () {
+        laaudio.play();
+        laaudio.currentTime = 0;
+
+      });
+
+      var tiaudio = document.createElement("audio");
+      tiaudio.setAttribute("src", "sounds/voice_7.mp3");
+
+      $(".ti").on("click", function () {
+        tiaudio.play();
+        tiaudio.currentTime = 0;
+
+
+      });
+
+      var dohighaudio = document.createElement("audio");
+      dohighaudio.setAttribute("src", "sounds/voice_8.mp3");
+
+      $(".dohigh").on("click", function () {
+        dohighaudio.play();
+        dohighaudio.currentTime = 0;
+
+      });
+    })
+
+    function removeTransition(e) {
+      if (e.propertyName !== 'transform') return;
+      e.target.classList.remove('playing');
+    }
+
+    function playSoundKey(e) {
+      const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+      const key = document.querySelector(`div[data-key="${e.keyCode}"]`);
+      if (!audio) return;
+
+      key.classList.add('playing');
+      audio.currentTime = 0;
+      audio.play();
+    }
+
+
+
+    const keys = Array.from(document.querySelectorAll('.key'));
+    keys.forEach(key => key.addEventListener('transitionend', removeTransition));
+    window.addEventListener('keydown', playSoundKey);
+
+
+  </script>
+
+  <!-- JQuery -->
+  <script src="https://code.jquery.com/jquery.js"></script>
+</body>
+
+</html>
