@@ -67,73 +67,69 @@
 
   <script>
 
-    $(document).on("pagecreate", "#page1", function () {
+    var dolowaudio = document.createElement("audio");
+    dolowaudio.setAttribute("src", "sounds/voice_1.mp3");
+    document.querySelector(".dolow").addEventListener('touchstart');
+    {
+      dolowaudio.play();
+      dolowaudio.currentTime = 0;
+    }
 
-      var dolowaudio = document.createElement("audio");
-      dolowaudio.setAttribute("src", "sounds/voice_1.mp3");
+    var reaudio = document.createElement("audio");
+    reaudio.setAttribute("src", "sounds/voice_2.mp3");
+    document.querySelector(".re").addEventListener('touchstart'); 
+    {
+      reaudio.play();
+      reaudio.currentTime = 0;
+    };
 
-      $(".dolow").on("tap", function () {
-        dolowaudio.play();
-        dolowaudio.currentTime = 0;
+    var miaudio = document.createElement("audio");
+    miaudio.setAttribute("src", "sounds/voice_3.mp3");
 
-      });
+    document.querySelector(".mi").addEventListener('touchstart'); {
+      miaudio.play();
+      miaudio.currentTime = 0;
+    };
 
-      var reaudio = document.createElement("audio");
-      reaudio.setAttribute("src", "sounds/voice_2.mp3");
+    var faaudio = document.createElement("audio");
+    faaudio.setAttribute("src", "sounds/voice_4.mp3");
 
-      $(".re").on("tap", function () {
-        reaudio.play();
-        reaudio.currentTime = 0;
-      });
+    document.querySelector(".fa").addEventListener('touchstart'); {
+      faaudio.play();
+      faaudio.currentTime = 0;
+    };
 
-      var miaudio = document.createElement("audio");
-      miaudio.setAttribute("src", "sounds/voice_3.mp3");
+    var solaudio = document.createElement("audio");
+    solaudio.setAttribute("src", "sounds/voice_5.mp3");
 
-      $(".mi").on("tap", function () {
-        miaudio.play();
-        miaudio.currentTime = 0;
-      });
+    document.querySelector(".sol").addEventListener('touchstart'); {
+      solaudio.play();
+      solaudio.currentTime = 0;
+    };
 
-      var faaudio = document.createElement("audio");
-      faaudio.setAttribute("src", "sounds/voice_4.mp3");
+    var laaudio = document.createElement("audio");
+    laaudio.setAttribute("src", "sounds/voice_6.mp3");
 
-      $(".fa").on("tap", function () {
-        faaudio.play();
-        faaudio.currentTime = 0;
-      });
+    document.querySelector(".la").addEventListener('touchstart'); {
+      laaudio.play();
+      laaudio.currentTime = 0;
+    };
 
-      var solaudio = document.createElement("audio");
-      solaudio.setAttribute("src", "sounds/voice_5.mp3");
+    var tiaudio = document.createElement("audio");
+    tiaudio.setAttribute("src", "sounds/voice_7.mp3");
 
-      $(".sol").on("tap", function () {
-        solaudio.play();
-        solaudio.currentTime = 0;
-      });
+    document.querySelector(".ti").addEventListener('touchstart');{
+      tiaudio.play();
+      tiaudio.currentTime = 0;
+    };
 
-      var laaudio = document.createElement("audio");
-      laaudio.setAttribute("src", "sounds/voice_6.mp3");
+    var dohighaudio = document.createElement("audio");
+    dohighaudio.setAttribute("src", "sounds/voice_8.mp3");
 
-      $(".la").on("tap", function () {
-        laaudio.play();
-        laaudio.currentTime = 0;
-      });
-
-      var tiaudio = document.createElement("audio");
-      tiaudio.setAttribute("src", "sounds/voice_7.mp3");
-
-      $(".ti").on("tap", function () {
-        tiaudio.play();
-        tiaudio.currentTime = 0;
-      });
-
-      var dohighaudio = document.createElement("audio");
-      dohighaudio.setAttribute("src", "sounds/voice_8.mp3");
-
-      $(".dohigh").on("tap", function () {
-        dohighaudio.play();
-        dohighaudio.currentTime = 0;
-      });
-    })
+    document.querySelector(".dohigh").addEventListener('touchstart'); {
+      dohighaudio.play();
+      dohighaudio.currentTime = 0;
+    };
 
     // $(document).ready(function () {
 
